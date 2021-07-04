@@ -1,17 +1,15 @@
-import theme from '@nuxt/content-theme-docs'
-import interpolateSourceCode from './lib/interpolate-source-code'
-
+import theme from "@nuxt/content-theme-docs";
+import interpolateSourceCode from "./lib/interpolate-source-code";
 
 export default theme({
-  css: [
-    'assets/css/main.css'
-  ],
+  css: ["assets/css/main.css"],
   docs: {
-    primaryColor: '#E24F55'
+    primaryColor: "#E24F55"
   },
   hooks: {
-    'content:file:beforeParse': interpolateSourceCode
+    "content:file:beforeParse": interpolateSourceCode
   },
+  watch: ["static/files/sony_wld.ksy"],
   // Trying ~/plugins/vue-json-tree-view.js resolves to /node_modules/@nuxt/content-theme-docs/src/plugins/vue-json-tree-view.js
   // plugins: [`${__dirname}/plugins/vue-json-tree-view.js`]
   // external link icon
@@ -23,13 +21,18 @@ export default theme({
           type: "element",
           tagName: "icon-external-link",
           properties: {
-            className: ["w-4", "h-4", "ml-1", "-mt-1"],
-          },
+            className: ["w-4", "h-4", "ml-1", "-mt-1"]
+          }
         },
         contentProperties: {
-          className: ["inline-block", "align-middle", "text-gray-600", "dark:text-gray-400"],
-        },
-      },
-    },
-  },
-})
+          className: [
+            "inline-block",
+            "align-middle",
+            "text-gray-600",
+            "dark:text-gray-400"
+          ]
+        }
+      }
+    }
+  }
+});
